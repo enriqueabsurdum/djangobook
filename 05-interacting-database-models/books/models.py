@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Publisher(models.Model):
-    """Publisher models."""
+    """Publisher class."""
 
     name = models.CharField(max_length=30)
     address = models.CharField(max_length=50)
@@ -22,7 +22,7 @@ class Publisher(models.Model):
 
 
 class Author(models.Model):
-    """Author models."""
+    """Author class."""
 
     salutation = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
