@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Search Form{% endblock %}
+
+{% block content %}
+<h1>Search</h1>
+
+{% if errors %}
+<ul>
+    {% for error in errors %}
+    <li style="color: red;">{{ error }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form action="" method="GET">
+    {% csrf_token %}
+    <label for="q">Search:</label>
+    <input type="text" name="q" value="{{ query|escape}}" id="q">
+    <input type="submit" value="Search">
+</form>
+{% endblock %}

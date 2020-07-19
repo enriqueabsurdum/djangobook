@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+
+<h1>Results</h1>
+
+<p>You are looking for: <strong>{{ query }}</strong></p>
+
+{% if books %}
+<p>Books found: {{ books|length }} book{{ books|pluralize }}.</p>
+<ul>
+    {% for book in books %}
+    <li>{{ book.title }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No book matches the search.</p>
+{% endif %}
+
+{% include 'footer.html' %}
+{% endblock %}
+
